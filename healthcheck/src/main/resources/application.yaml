@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  
+healthcheck:
+  report:
+    endpoint: https://backend-challenge.line-apps.com/healthcheck/report
+
+http:
+  timeout: 20
+
+logging:
+  level:
+    root: INFO
+    com.iilllii.healthcheck: INFO
+    org.apache.http: OFF
+  file:    name: result.log
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          line:
+            client-id: 1653857504
+            client-secret: 3d482f9978f95db2344ce285bba537ee
+            scope: profile
+            redirect-uri: http://localhost:8080/login/oauth2/code/line
+            authorization-grant-type: authorization_code
+        provider:
+          line:
+            authorization-uri: https://access.line.me/oauth2/v2.1/authorize
+            token-uri: https://api.line.me/oauth2/v2.1/token
+            user-info-uri: https://api.line.me/v2/profile
+            user-name-attribute: userId

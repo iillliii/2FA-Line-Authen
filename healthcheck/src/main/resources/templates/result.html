@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>HEALTHCHECK - RESULT</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<div class="result">
+	<p><span style="font-weight:bold" th:text="${result.status}"></span></p>
+	<p>Checked webistes: <span style="font-weight:bold" th:text="${result.totalWebsites}"></span></p>
+	<p>Successful webistes: <span style="font-weight:bold" th:text="${result.success}"></span></p>
+	<p>Failure webistes: <span style="font-weight:bold" th:text="${result.failure}"></span></p>
+	<p>Total times to finished checking website: <span style="font-weight:bold" th:text="${result.totalTime}"></span> ms</p>
+</div>
+</body>
+</html>
